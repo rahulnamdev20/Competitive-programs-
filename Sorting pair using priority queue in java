@@ -1,0 +1,55 @@
+import java.io.*;
+import java.util.*;
+
+class Pair{
+    int x;
+    int y;
+    
+    Pair(int x,int y)
+    {
+        this.x=x;
+        this.y=y;
+        
+    }
+}
+
+class PriorityQueueComparator implements Comparator<Pair>
+{
+    public int compare(Pair p1,Pair p2)
+    {
+        return p1.y-p2.y;
+    }
+}
+
+public class Main{
+    
+    
+    
+    public static void main(String args[])
+    { Pair arr[]=new Pair[10];
+        Comparator<Pair> pqCompare = new PriorityQueueComparator();
+PriorityQueue<Pair> pq = new PriorityQueue<Pair>(100000,pqCompare);
+        
+        Pair p2=new Pair(40,50);
+        pq.add(p2);
+         Pair p3=new Pair(0,0);
+          Pair p4=new Pair(1,2);
+          pq.add(p3);
+          pq.add(p4);
+        for(int i=0;i<5;i++)
+        {  arr[i]=new Pair(i,i+2);
+            pq.add(arr[i]);
+        }
+    
+        
+        
+    
+    while(pq.size()>0)
+    {
+        Pair pqPair = (Pair) pq.poll();
+     int sN = pqPair.x;
+    int we = pqPair.y;
+    System.out.println(sN+""+we);
+    }
+}
+}
