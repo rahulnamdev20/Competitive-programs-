@@ -6,6 +6,7 @@ def multiply(n, m):
 		
 		if(m==1):
 		    print("(",n,"<<",count,")")
+		    ans += n << count
 		    break
 		if (m % 2 == 1): 
 			ans += n << count
@@ -19,8 +20,8 @@ def multiply(n, m):
 
 # Driver code 
 if __name__ == '__main__': 
-	n = 5
-	m = 4
-	print(multiply(n, m)) 
+	n = 6
+	m = 7
+	print("value is ",multiply(n, m)) 
 	
 
